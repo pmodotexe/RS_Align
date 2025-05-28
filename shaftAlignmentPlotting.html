@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shaft Alignment</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--Reset Styling-->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    
+    <!--Bootstrap-->
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    
+    <!--Personal Styling-->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+    
+<body class="d-flex flex-column" id="main-body">
+    
+    <!--Header-->
+    <header class="header-class">
+        <nav class="navbar navbar-dark navbar-expand-lg">
+            <a class="navbar-brand nav-title px-2" href="../index.html">Nick Mikstas Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="container text-center">
+                <h1>Shaft Alignment</h1>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../resume.html">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../web.html">Web</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../embedded.html">Embedded</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../fpga.html">FPGA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../dsp.html">DSP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../games.html">Games</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        
+    <!--Main content body-->
+    <div class="mx-5" id="page-body">
+        <div class="container-fluid bg-white px-4">
+            <img id="watermark" width="0" height="0" src="./images/watermark.png" alt="Watermark">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="hov">
+                        <img class="img-fluid img-item" src="./images/motors.png" alt="Precision Shaft Alignment">
+                        <div class="overlay overlay-text">
+                            All dimensions are in inches.
+                            Dimension A - Distance between stationary and movable dials.
+                            Dimension B - Distance from moveable device front feet to stationary dial.
+                            Dimension C - Distance from moveable device rear feet to stationary dial.
+                            Dimension D - Distance from stationary device front feet to stationary dial.
+                            Dimension E - Distance from stationary device rear feet to stationary dial.
+                            Dimension F - Distance from stationary device rear feet to moveable device rear feet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Press <b>Enter</b> after inputting data to update the calculations</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <form name="functionality-form">
+                        <input type="radio" id="basic" name="function-btn" value="basic-select" onchange="basicAdvanced(this)" checked>
+                        <label for="basic-select">Basic Mode</label>
+                        <input type="radio" id="advanced" name="function-btn" value="advanced-select" onchange="basicAdvanced(this)">
+                        <label for="advanced-select">Advanced Mode</label>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" id="clear-btn" style="float: right;" class="btn btn-outline-warning mb-2" onclick="clearData()">Clear Data</button>
+                </div>
+            </div>
+           
+            <div id="basic-use">
+                <div class="row">
+                    <div class="col-md-12 belt-border">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Dimension A(.1 to 100 inches):</p>
+                                <input id="dial-dist" type="text" onkeypress="return isNumberKey(this, .1, 100, event)" onfocusout="validateNumber(this, .1, 100)"/>
+                                <p>Dimension B(Greater than A to 100 inches):</p>
+                                <input id="mff-to-dial" type="text" onkeypress="return isNumberKey(this, .1, 100, event)" onfocusout="validateNumber(this, .1, 100)"/>
+                                <p>Dimension C(Greater than B to 100 inches):</p>
+                                <input id="mrf-to-dial" type="text" onkeypress="return isNumberKey(this, .1, 100, event)" onfocusout="validateNumber(this, .1, 100)"/>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Dimension D(.1 to 100 inches):</p>
+                                <input id="sff-to-dial" type="text" onkeypress="return isNumberKey(this, .1, 100, event)" onfocusout="validateNumber(this, .1, 100)"/>
+                                <p>Dimension E(Greater than D to 100 inches):</p>
+                                <input id="srf-to-dial" type="text" onkeypress="return isNumberKey(this, .1, 100, event)" onfocusout="validateNumber(this, .1, 100)"/>
+                                <p>Total length(Dimension F):</p>
+                                <p id="total-dist">???</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6 belt-border">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img class="img-fluid small-img" src="./images/stationary.png" alt="Stationary dial">
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>TIR(-99 to 99):</p>
+                                <input id="s-tir" type="text" onkeypress="return isSignedNumberKey(this, -99, 99, event)" onfocusout="validateNumber(this, -99, 99)"/>
+                                <p>1/2 TIR: <span id="s-tir-1/2">???</span></p>
+                            </div>
+                            <div class="col-md-6" id="stationary-dial"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 belt-border">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img class="img-fluid small-img" src="./images/movable.png" alt="Movable dial">
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>TIR(-99 to 99):</p>
+                                <input id="m-tir" type="text" onkeypress="return isSignedNumberKey(this, -99, 99, event)" onfocusout="validateNumber(this, -99, 99)"/>
+                                <p>1/2 TIR: <span id="m-tir-1/2">???</span></p>
+                                <p>-1/2 TIR: <span id="m-tir-pm">???</span></p>
+                            </div>
+                            <div class="col-md-6" id="movable-dial"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6 belt-border">
+                        <h3>Option 1</h3>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="img-fluid small-img" src="./images/mov.png" alt="Movable device inboard">
+                                <div class="divider"></div>
+                                <h4>Inboard</h4>
+                                <p id="mov-in1" class="align">???</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <img class="img-fluid small-img" src="./images/mov.png" alt="Movable device outboard">
+                                <div class="divider"></div>
+                                <h4>Outboard</h4>
+                                <p id="mov-out1" class="align">???</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 belt-border">
+                        <h3>Option 2</h3>
+                        <div class="divider"></div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="img-fluid small-img" src="./images/sta.png" alt="Stationary device inboard">
+                                <div class="divider"></div>
+                                <h4>Inboard</h4>
+                                <p id="sta-in1" class="align">???</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <img class="img-fluid small-img" src="./images/mov.png" alt="Movable device inboard">
+                                <div class="divider"></div>
+                                <h4>Inboard</h4>
+                                <p id="mov-in2" class="align">???</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 mt-4" id="plot"></div>
+                </div>
+            </div>
+
+            <div id="advanced-use">
+                <div class="row">
+                    <div class="col-md-12 belt-border">
+                        <label for="report-title">Report Title (80 characters max)</label>
+                        <input type="text" id="report-title" class="form-control input-fix" maxlength="80" onkeyup="updateTitle(this)">
+                        <label for="report-comments">Report Comments (1024 characters max)</label>
+                        <textarea id="report-comments" class="form-control" rows="2" maxlength="1024" onkeyup="updateComments(this)"></textarea>
+                        <h3>Cost Data</h3>
+                        <div class="divider"></div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p>Cost per KWh<br>(.01 to 100 dollars):</p>
+                                <input id="kwh" maxlength="5" type="text" onkeypress="return isNumberKey(this, 0.01, 100, event)" onfocusout="validateNumber(this, 0.01, 100)"/>    
+                            </div>
+                            <div class="col-md-3">
+                                <p>Motor voltage<br>(208 to 600 volts):</p>
+                                <input id="volt" maxlength="5" type="text" onkeypress="return isNumberKey(this, 208, 600, event)" onfocusout="validateNumber(this, 208, 600)"/>    
+                            </div>
+                            <div class="col-md-3">
+                                <p>Usage multiplier<br>(.001 to 1.0):</p>
+                                <input id="mult" maxlength="5" type="text" onkeypress="return isNumberKey(this, 0.001, 1.0, event)" onfocusout="validateNumber(this, 0.001, 1.0)"/>    
+                            </div>
+                            <div class="col-md-3">
+                                <input type="radio" id="weekly-radio" name="cost-radios" value="weekly-radio" onchange="updateTime(0)">
+                                <label for="weekly-radio">Weekly</label><br>
+                                <input type="radio" id="monthly-radio" name="cost-radios" value="monthly radio" onchange="updateTime(1)" checked>
+                                <label for="monthly-radio">Monthly</label><br>
+                                <input type="radio" id="yearly-radio" name="cost-radios" value="yearly radio" onchange="updateTime(2)">
+                                <label for="yearly-radio">Yearly</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button type="button" id="adj-btn" class="btn btn-outline-primary mb-2 mt-3" onclick="addAdjustment()">Add Adjustment</button>
+                        <button type="button" id="meas-btn" class="btn btn-outline-primary mb-2 mt-3" onclick="addMeasurement()">Add Measurement</button>
+                        <button type="button" id="save-btn" class="btn btn-outline-primary mb-2 mt-3" onclick="saveData()">Save Data</button>
+                        <label class="btn btn-outline-primary mb-2 mt-3"> Load Data <input type="file" accept=".dat" onchange="loadData(this)" hidden></label>
+                        <button type="button" id="pdf-btn" class="btn btn-outline-primary mb-2 mt-3" onclick="print()">Print</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" id="multi">
+                        <!--Container for measurements and adjustments-->
+                    </div>
+                </div>
+            </div>
+            <p>The source code for this page can be found <a href="https://github.com/nmikstas/portfolio/tree/master/ShaftAlignmentPlotting">here</a></p>
+        </div>
+    </div>
+        
+    <!--Footer-->
+    <footer id="sticky-footer" class="pt-4 pb-1">
+        <div class="container text-center">
+            <small>&copy;Nick Mikstas - nmikstas@alumni.scu.edu</small>
+        </div>
+    </footer>
+
+    <!--jQuery-->
+    <script src="./js/jquery.min.js"></script>
+        
+    <!--Bootstrap-->
+    <script src="./js/bootstrap.min.js"></script>
+
+    <!--Javascript-->
+    <script src="js/dial.js"></script>
+    <script src="js/shaftPlot.js"></script>
+    <script src="js/sam.js"></script>
+    <script src="js/shaftAlignmentPlotting.js"></script>
+</body>
+        
+</html>
