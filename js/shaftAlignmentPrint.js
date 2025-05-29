@@ -4,9 +4,9 @@ let saa = JSON.parse(sessionStorage.getItem("shaftAlignmentArray"));
 sessionStorage.removeItem("shaftAlignmentArray");
 sessionStorage.clear();
 
-//Graph watermarks.
-let bkImg = document.getElementById("watermark");
-let bkOp  = .05
+// No watermark
+let bkImg = null;
+let bkOp  = 0;
 
 //Get main div.
 let body = document.getElementById("report-body");
