@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Shaft Alignment</title>
+    <title>Shaft Alignment Report</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
@@ -17,16 +17,22 @@
     <link rel="stylesheet" type="text/css" href="./css/printStyle.css">
 </head>
 
-<body class="" id="print-body" class="px-2">
-    <img id="watermark" width="0" height="0" src="./images/watermark.png" alt="Watermark">
-    <h1>Precision Shaft Alignment Report</h1>
+<body id="print-body" class="px-2">
+    <div class="title">
+        <h1>Precision Shaft Alignment Report</h1>
+    </div>
     <div class="divider"></div>
     
     <div class="center-div">
-        <img class="img-fluid img-item motor-image" src="./images/motors.png" alt="Motor Foot Distances">
+        <img class="img-fluid motor-image" src="./images/motors.png" alt="Motor Foot Distances">
+        <p class="mt-3"><small>Diagram showing measurement points and dimensions</small></p>
     </div>
     
     <div id="report-body"></div>
+
+    <div class="footer-print text-center mt-4">
+        <p><small>RS Shaft Alignment Tool</small></p>
+    </div>
 
     <!--jQuery-->
     <script src="./js/jquery.min.js"></script>
