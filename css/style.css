@@ -1196,7 +1196,7 @@ body {
 }
 
 .form-section h3 {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
     font-weight: 700;
     margin-bottom: 1.5rem;
     padding-bottom: 0.75rem;
@@ -1205,6 +1205,15 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+/* Ensure section headers are always visible */
+.dimensions-section h3,
+.tir-section h3,
+.results-section h3,
+.plot-section-sp h3 {
+    color: #333333 !important;
+    background: transparent !important;
 }
 
 .dimensions-section {
