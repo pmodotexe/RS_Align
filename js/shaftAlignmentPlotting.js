@@ -1250,14 +1250,14 @@ function displaySinglePageResults(plot) {
                 </div>
                 <div class="adjustments-grid">
                     <div class="adjustment-item">
-                        <img src="./images/mov.png" alt="Movable inboard" class="adjustment-icon">
+                        <img src="images/mov.png" alt="Movable inboard" class="adjustment-icon">
                         <div class="adjustment-details">
                             <h4>Inboard Feet</h4>
                             <div class="adjustment-value">${((movIn1 >= 0) ? "+" : "") + movIn1.toFixed(currentUnits === 'inches' ? 2 : 0) + unit}</div>
                         </div>
                     </div>
                     <div class="adjustment-item">
-                        <img src="./images/mov.png" alt="Movable outboard" class="adjustment-icon">
+                        <img src="images/mov.png" alt="Movable outboard" class="adjustment-icon">
                         <div class="adjustment-details">
                             <h4>Outboard Feet</h4>
                             <div class="adjustment-value">${((movOut1 >= 0) ? "+" : "") + movOut1.toFixed(currentUnits === 'inches' ? 2 : 0) + unit}</div>
@@ -1273,14 +1273,14 @@ function displaySinglePageResults(plot) {
                 </div>
                 <div class="adjustments-grid">
                     <div class="adjustment-item">
-                        <img src="./images/sta.png" alt="Stationary inboard" class="adjustment-icon">
+                        <img src="images/sta.png" alt="Stationary inboard" class="adjustment-icon">
                         <div class="adjustment-details">
                             <h4>Stationary Inboard</h4>
                             <div class="adjustment-value">${((staIn1 >= 0) ? "+" : "") + staIn1.toFixed(currentUnits === 'inches' ? 2 : 0) + unit}</div>
                         </div>
                     </div>
                     <div class="adjustment-item">
-                        <img src="./images/mov.png" alt="Movable inboard" class="adjustment-icon">
+                        <img src="images/mov.png" alt="Movable inboard" class="adjustment-icon">
                         <div class="adjustment-details">
                             <h4>Movable Inboard</h4>
                             <div class="adjustment-value">${((movIn2 >= 0) ? "+" : "") + movIn2.toFixed(currentUnits === 'inches' ? 2 : 0) + unit}</div>

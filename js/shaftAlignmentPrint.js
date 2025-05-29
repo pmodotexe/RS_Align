@@ -100,14 +100,14 @@ let addAdjustment = (obj, num) =>
     let staInfo = document.createElement("span");
     staInfo.classList.add("two-thirds", "child-center");
     staInfo.innerHTML =
-    "<img class='img-fluid small-img' src='./images/stationary.png' alt='Stationary dial'>" +
+    "<img class='img-fluid small-img' src='images/stationary.png' alt='Stationary dial'>" +
     "<p class='my-0 py-0'><b>TIR: </b>" + obj.stationaryDial + "</p>" +
     "<p class='my-0 py-0'><b>1/2 TIR:</b> " + (obj.stationaryDial / 2) + "</p>"; 
 
     let movInfo = document.createElement("span");
     movInfo.classList.add("two-thirds", "child-center");
     movInfo.innerHTML =
-    "<img class='img-fluid small-img' src='./images/movable.png' alt='Movable dial'>" +
+    "<img class='img-fluid small-img' src='images/movable.png' alt='Movable dial'>" +
     "<p class='my-0 py-0'><b>TIR: </b>" + obj.movableDial + "</p>" +
     "<p class='my-0 py-0'><b>-1/2 TIR:</b> " + (-obj.movableDial / 2) + "</p>"; 
 
@@ -116,12 +116,12 @@ let addAdjustment = (obj, num) =>
     "<span class='half belt-border center-div px-1'>" +
         "<h4>Option 1</h4>" +
         "<span class='half px-1'>" +
-            "<img class='img-fluid small-img my-0 py-0' src='./images/mov.png' alt='Movable device inboard'>" +
+            "<img class='img-fluid small-img my-0 py-0' src='images/mov.png' alt='Movable device inboard'>" +
             "<div class='divider'></div>" +
             "<p><b>Inboard: </b>" + obj.o1InboardString + "</p>" +
         "</span>" +
         "<span class='half px-1'>" +
-            "<img class='img-fluid small-img' src='./images/mov.png' alt='Movable device outboard'>" +
+            "<img class='img-fluid small-img' src='images/mov.png' alt='Movable device outboard'>" +
             "<div class='divider'></div>" +
             "<p><b>Outboard: </b>" + obj.o1OutboardString + "</p>" +
         "</span>" +
@@ -130,12 +130,12 @@ let addAdjustment = (obj, num) =>
     "<span class='half belt-border center-div px-1'>" +
         "<h4>Option 2</h4>" +
         "<span class='half px-1'>" +
-            "<img class='img-fluid small-img' src='./images/sta.png' alt='Stationary device inboard'>" +
+            "<img class='img-fluid small-img' src='images/sta.png' alt='Stationary device inboard'>" +
             "<div class='divider'></div>" +
             "<p><b>Inboard: </b>" + obj.o2Inboard1String + "</p>" +
         "</span>" +
         "<span class='half px-1'>" +
-            "<img class='img-fluid small-img' src='./images/mov.png' alt='Movable device inboard'>" +
+            "<img class='img-fluid small-img' src='images/mov.png' alt='Movable device inboard'>" +
             "<div class='divider'></div>" +
             "<p><b>Inboard: </b>" + obj.o2Inboard2String + "</p>" +
         "</span>" +
