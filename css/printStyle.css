@@ -1,164 +1,244 @@
-body, html
-{
+body, html {
     height: 100%;
     width: 1000px;
     background-image: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     overflow: visible;
-    margin: 1rem 1rem 1rem 1rem;
+    margin: 1rem;
+    color: #1d1d1f;
+    line-height: 1.5;
 }
 
-h1
-{
+h1 {
     text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
 }
 
-h3
-{
-    font-weight: bold;
+h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
-h4
-{
-    font-weight: bold;
-    margin-top: 1.0rem;
-}
-
-p
-{
-    margin-top: 1.0rem;
+h4 {
+    font-weight: 500;
+    margin-top: 1rem;
     font-size: 1.25rem;
+    letter-spacing: -0.01em;
 }
 
-.center-div
-{
+p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.center-div {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
-.motor-image
-{
-    max-width: 50%;
+.motor-image {
+    max-width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.bubble-canvas
-{
+.bubble-canvas {
     max-width: 50px;
     margin: 0 auto;
 }
 
-.child-center
-{
+.child-center {
     text-align: center;
 }
 
-.output
-{
-    font-size: 1.0rem;
+.output {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-.title
-{
-    background-color: #e6e6e6;
-    padding-bottom: 1rem;
-    padding-top: .5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 10px;
+.title {
+    background-color: #f5f5f7;
+    padding: 1.5rem;
+    border-radius: 12px;
     margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.divider
-{
-    border-bottom: 3px solid #666666;
-    min-height: 2px;
+.divider {
+    border-bottom: 1px solid #d2d2d7;
+    min-height: 1px;
+    margin: 1.5rem 0;
+    opacity: 0.7;
 }
 
-.cost-result
-{
-    background-color: rgb(213, 233, 255);
-    font-weight: bold;
+.cost-result {
+    background-color: rgba(0, 113, 227, 0.1);
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 8px;
 }
 
-.belt-border
-{
-    border-style: solid;
-    border-color: #707070;
-    border-width: 5px;
-    border-radius: 5px;
+.belt-border {
+    border: 1px solid #d2d2d7;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.small-img
-{
-    max-width: 100px;
+.small-img {
+    max-width: 80px;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.tenth
-{
+.tenth {
     display: inline-block;
     width: 10%;
 }
 
-.fifth
-{
+.fifth {
     display: inline-block;
     width: 20%;
 }
 
-.quarter
-{
+.quarter {
     display: inline-block;
     width: 25%;
 }
 
-.third
-{
+.third {
     display: inline-block;
     width: 33.33333%;
 }
 
-.two-thirds
-{
+.two-thirds {
     display: inline-block;
     width: 66.66666%;
 }
 
-.fourty-percent
-{
+.fourty-percent {
     display: inline-block;
     width: 40%;
 }
 
-.half
-{
+.half {
     display: inline-block;
     width: 50%;
 }
 
-.whole
-{
+.whole {
     display: inline-block;
     width: 100%;
 }
 
-#print-body
-{
+#print-body {
     background-color: #ffffff;
     background-image: none;
 }
 
-@media print
-{
-    *{
+/* Form elements styling for print */
+.form-control-static {
+    font-weight: 500;
+    padding: 0.75rem;
+    background-color: #f5f5f7;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 100px;
+    text-align: center;
+    border: 1px solid #d2d2d7;
+}
+
+/* Table styling for print */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+table, th, td {
+    border: 1px solid #d2d2d7;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+th {
+    background-color: #f5f5f7;
+    font-weight: 600;
+}
+
+/* Section styling */
+.section {
+    margin-bottom: 2rem;
+    page-break-inside: avoid;
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1d1d1f;
+}
+
+/* Plot styling */
+.plot-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid #d2d2d7;
+    margin-bottom: 1.5rem;
+}
+
+/* Print-specific styles */
+@media print {
+    * {
         color-adjust: exact;
         -webkit-print-color-adjust: exact;
     }
 
-    .pagebreak
-    {
+    .pagebreak {
         break-after: always;
     }
-}
     
+    body, html {
+        width: 100%;
+        margin: 0;
+        padding: 0.5in;
+    }
+    
+    .belt-border {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #d2d2d7;
+    }
+    
+    h1, h2, h3, h4 {
+        break-after: avoid;
+    }
+    
+    .title {
+        box-shadow: none;
+    }
+    
+    .motor-image {
+        box-shadow: none;
+    }
+    
+    table, .section {
+        page-break-inside: avoid;
+    }
+}
